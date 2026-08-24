@@ -4,13 +4,13 @@ public:
         int m = mat.size();
         int n = mat[0].size();
         vector<vector<int>> answer(m, vector<int>(n));
-        for(int i = 0;i<m;i++){
+        for(int i = 0 ;i<m;i++){
             for(int j = 0;j<n;j++){
                 int sum = 0;
-                for(int r = i-k;r<=i+k;r++){
-                    for(int c = j-k;c<=j+k;c++){
-                        if(r>=0 && r<m && c>=0 && c<n){\
-                        sum+=mat[r][c];
+                for(int c = i-k;c<=i+k;c++){
+                    for(int r = j-k;r<=j+k;r++){
+                        if(c>=0 && c<m && r>=0 && r<n){
+                            sum +=mat[c][r];
                         }
                     }
                 }
@@ -18,6 +18,5 @@ public:
             }
         }
         return answer;
-        
     }
 };
